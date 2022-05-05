@@ -5,20 +5,18 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_HOST: localhost 
+      POSTGRES_HOST: localhost
       POSTGRES_PASSWORD: root
       POSTGRES_USER: root
       POSTGRES_DB: sequelize
     ports:
-      - 5432:5432    
+      - 5432:5432
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
     depends_on:
-      - db  
+      - db
     links:
       - db
-
-    
