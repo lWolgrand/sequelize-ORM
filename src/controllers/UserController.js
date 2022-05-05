@@ -6,7 +6,7 @@ module.exports = { //Exporta um objeto com as rotas para ser usado em outros arq
         const users = await User.findAll(); //Busca todos os usuários no banco de dados.
         return res.json(users); //Retorna os usuários encontrados.
     },
-    async storecaralho(req, res) { //Método store que será chamado quando o usuário acessar a rota /users.
+    async store(req, res) { //Método store que será chamado quando o usuário acessar a rota /users.
         const { name, email } = req.body; //Pega os dados do usuário que serão armazenados no banco de dados.
 
         const user = await User.create({ //Cria um usuário no banco de dados.

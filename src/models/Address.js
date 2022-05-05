@@ -9,7 +9,7 @@ class Address extends Model {
       zipcode: DataTypes.STRING,
     }, {
       sequelize
-    });
+    })
   }
 
   static associate(models) {

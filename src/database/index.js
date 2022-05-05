@@ -9,4 +9,6 @@ const connection = new Sequelize(dbconfig); //Cria uma instância do sequelize.
 User.init(connection); //Inicializa a classe User.
 Address.init(connection); //Inicializa a classe Address.
 
+Address.associate(connection.models); //Associa a classe Address a classe User.
+
 module.exports = connection; 
