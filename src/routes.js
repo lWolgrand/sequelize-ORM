@@ -7,6 +7,8 @@ const routes = express.Router(); //Cria uma instância do módulo express.Router
 
 routes.get('/users', UserController.index); // Listagem de usuários sendo o index o método que será chamado
 routes.post('/users', UserController.store); // Cadastro de usuários sendo o store o método que será chamado. O store é um método que recebe um request e um response.
+
+routes.get('/users/:user_id/addresses', AddressController.index); //
 routes.post('/users/:user_id/addresses', AddressController.store); // Cadastro de endereços sendo o store o método que será chamado. O store é um método que recebe um request e um response.
 
 module.exports = routes; //Exporta o objeto routes para ser usado em outros arquivos do projeto.

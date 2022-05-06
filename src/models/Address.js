@@ -6,7 +6,7 @@ class Address extends Model {
     super.init({
       street: DataTypes.STRING,
       number: DataTypes.STRING,
-      zipcode: DataTypes.STRING,
+      zipcode: DataTypes.INTEGER,
     }, {
       sequelize
     })

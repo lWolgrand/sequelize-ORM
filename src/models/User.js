@@ -9,5 +9,10 @@ class User extends Model {
             sequelize //Passa o objeto sequelize para o método init.
         });
     } //Fim do método init.
+
+    static associate(models) { 
+        this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' }); 
+    }
 } //Fim da classe User.
+
 module.exports = User; //Exporta a classe User para ser usada em outros arquivos do projeto com a função module.exports que é um módulo do node que permite exportar um objeto para outros arquivos do projeto que o importem com a função require. 

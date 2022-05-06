@@ -1,6 +1,17 @@
 const Address = require('../models/Address');
+const User = require('../models/User');
 
 module.exports = {
+    async index(req, res) { 
+      const { user_id } = req.params;
+
+      const user = await User.findByPk(user_id, {
+        include: [{
+          model: Address,
+          as: 'addresses',
+        }],
+      });      
+  },
   async store(req, res) {
     const { user_id } = req.params;
     const { street, number, zipcode } = req.body;
@@ -12,9 +23,9 @@ module.exports = {
     }
 
     const address = await Address.create({
+      zipcode,
       street,
       number,
-      zipcode,
       user_id,
     });
 
