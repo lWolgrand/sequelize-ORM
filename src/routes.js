@@ -12,7 +12,7 @@ routes.post('/users', UserController.store); // Cadastro de usuários sendo o st
 routes.get('/users/:user_id/addresses', AddressController.index); 
 routes.post('/users/:user_id/addresses', AddressController.store); 
 
-routes.get('/users/:user_id/techs', AddressController.index); 
-routes.post('/users/:user_id/techs', AddressController.store)
+routes.get('/users/:user_id/techs', TechController.index); 
+routes.post('/users/:user_id/teches',TechController.store)
 
 module.exports = routes; //Exporta o objeto routes para ser usado em outros arquivos do projeto.
