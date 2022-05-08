@@ -8,7 +8,8 @@ class Tech extends Model {
     }, {
       sequelize,
       tablename: 'techs',
-    })
+      freezeTableName: true
+    });
   }
 
   static associate(models) {
