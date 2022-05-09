@@ -3,6 +3,7 @@ const express = require('express'); //Importa o módulo express para ser usado c
 const UserController = require('./controllers/UserController'); //Importa o arquivo UserController.js que contém as rotas para o usuário.
 const AddressController = require('./controllers/AddressController'); 
 const TechController = require('./controllers/TechController');
+const ReportController = require('./controllers/ReportController');
 
 const routes = express.Router(); //Cria uma instância do módulo express.Router() que é um roteador de rotas. O roteador é um objeto que permite que rotas sejam definidas e manipuladas.
 
@@ -14,5 +15,7 @@ routes.post('/users/:user_id/addresses', AddressController.store);
 
 routes.get('/users/:user_id/techs', TechController.index); 
 routes.post('/users/:user_id/teches',TechController.store)
+ 
+routes.get('/report', ReportController.show);
 
 module.exports = routes; //Exporta o objeto routes para ser usado em outros arquivos do projeto.
